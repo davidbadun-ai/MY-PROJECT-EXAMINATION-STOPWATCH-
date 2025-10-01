@@ -1,0 +1,108 @@
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #222;
+  --card-bg: rgba(255, 255, 255, 0.15);
+  --accent: #4caf50;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #fff;
+  --card-bg: rgba(0, 0, 0, 0.3);
+  --accent: #ff9800;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  background: var(--card-bg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  width: 90%;
+  max-width: 420px;
+}
+
+#display {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  font-family: 'Orbitron', monospace;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  min-width: 80px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+#start { background: #4caf50; color: white; }
+#stop { background: #f44336; color: white; }
+#reset { background: #008cba; color: white; }
+#lap { background: #ff9800; color: white; }
+#countdown { background: #9c27b0; color: white; }
+#theme { background: #607d8b; color: white; }
+
+#countdown-input {
+  margin-top: 15px;
+}
+
+#countdown-input input {
+  width: 80px;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#laps {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+  max-height: 150px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+#laps li {
+  padding: 5px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
